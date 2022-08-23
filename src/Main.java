@@ -52,7 +52,7 @@ public class Main {
         //  task 2 Выводим сообщение пользователю
         osName();
 
-        // task 3
+        // task 3   Возвращаем под стредством return
 
         refoundDays();
     }
