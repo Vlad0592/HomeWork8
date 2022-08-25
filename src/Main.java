@@ -1,6 +1,6 @@
 public class Main {
 
-    public static void Year() {
+    public static void leapYear() {
         int year = 2020;
         if (year % 4 != 0 && year % 400 != 0) {
             System.out.println(" Не является высокосным");
@@ -9,7 +9,7 @@ public class Main {
         }
     }
 
-    public static void osName() {
+    public static void appInstallation() {
         int clientDeviceYear = 2015;
         int clientOs = 1;
         if (clientOs == 1) {
@@ -26,34 +26,37 @@ public class Main {
 
     }
 
-    public static int refoundDays() {
+    public static int deliveryPeriod() {
         int deliveryDistance = 60;
-        int srok = 1;
+        int deliveryDay = 1;
         if (deliveryDistance <= 20) {
-            srok = 1;
+            deliveryDay = 1;
 
         }
         if (deliveryDistance >= 20 && deliveryDistance < 60) {
-            srok = srok +1;
+            deliveryDay = deliveryDay + 1;
 
         }
 
-        if(deliveryDistance>= 60 && deliveryDistance < 100) {
-            srok = srok +2;
+        if (deliveryDistance >= 60 && deliveryDistance < 100) {
+            deliveryDay = deliveryDay + 2;
 
         }
-        System.out.println(srok);
-        return srok;
+        System.out.println(deliveryDay);
+        return deliveryDay;
     }
+
     public static void main(String[] args) {
         // task 1 Определение высокосного и не высокосного года
-        Year();
+        leapYear();
+        System.out.println();
 
         //  task 2 Выводим сообщение пользователю
-        osName();
+        appInstallation();
+        System.out.println();
 
         // task 3   Возвращаем под стредством return
 
-        refoundDays();
+        deliveryPeriod();
     }
 }
