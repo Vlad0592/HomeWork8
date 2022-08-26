@@ -1,29 +1,34 @@
+import java.time.LocalDate;
+
+
 public class Main {
 
     public static void leapYear() {
-        int year = 2020;
-        if (year % 4 != 0 && year % 400 != 0) {
-            System.out.println(" Не является высокосным");
-        } else {
+        int currentyear = 2020;
+        if (((currentyear % 4 == 0) && (currentyear % 100 != 0)) || (currentyear % 400 == 0)) {
             System.out.println("Является высокосным");
+        } else {
+            System.out.println(" Не Является высокосным");
         }
     }
 
     public static void appInstallation() {
-        int clientDeviceYear = 2015;
+        int clientDeviceYear = LocalDate.now().getYear();
         int clientOs = 1;
-        if (clientOs == 1) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите  версию приложения для iOS по ссылке");
-            }
-        } else if (clientDeviceYear < 2015) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        if (clientOs == 1 && clientDeviceYear <= 2015) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else {
-            System.out.println("Установите  версию приложения для Android по ссылке");
+            if (clientOs == 1 && clientDeviceYear > 2015) {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            }
         }
-
+        if (clientOs == 0 && clientDeviceYear <= 2015) {
+            System.out.println("Установите облегченную версию приложения для Andorid по ссылке");
+        } else {
+            if (clientOs == 0 && clientDeviceYear > 2015) {
+                System.out.println("Установите  версию приложения для Andorid по ссылке");
+            }
+        }
     }
 
     public static int deliveryPeriod() {
